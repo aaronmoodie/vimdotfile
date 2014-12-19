@@ -105,7 +105,7 @@ nnoremap ; :
 " Theme settings
 syntax enable
 set background=light
-colorscheme tomorrow
+colorscheme Tomorrow
 
 " Nerdtree settings
 let NERDTreeMinimalUI=1
