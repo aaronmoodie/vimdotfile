@@ -23,9 +23,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'rstacruz/sparkup'
 Plugin 'tpope/vim-endwise.git'
 Plugin 'Townk/vim-autoclose.git'
-Plugin 'chriskempson/vim-tomorrow-theme.git'
-"Plugin 'altercation/vim-colors-solarized.git'
-
+Plugin 'altercation/vim-colors-solarized.git'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -105,7 +103,7 @@ nnoremap ; :
 " Theme settings
 syntax enable
 set background=dark
-colorscheme Tomorrow-Night-Eighties
+colorscheme solarized
 
 " Nerdtree settings
 let NERDTreeMinimalUI=1
