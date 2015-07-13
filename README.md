@@ -1,7 +1,8 @@
 # Vim Dot File
 
-Install Vundle
+Requirements
+https://github.com/ggreer/the_silver_searcher
 https://github.com/gmarik/Vundle.vim
 
-ROCK!
+
 

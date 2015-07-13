@@ -20,10 +20,12 @@ Plugin 'tpope/vim-surround.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'rstacruz/sparkup'
 Plugin 'tpope/vim-endwise.git'
 Plugin 'Townk/vim-autoclose.git'
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'jelera/vim-javascript-syntax.git'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -116,11 +118,19 @@ let mapleader=" "
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_files = 0
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
+"let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " Set ctrlp quick keys
 nmap <leader>p :CtrlP<CR>
-nmap <leader>pb :CtrlPBuffer<CR>
+nmap <leader>b :CtrlPBuffer<CR>
 
 " Set nerdtree shortcut
 nmap <leader>n :NERDTreeToggle<CR>
