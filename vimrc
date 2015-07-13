@@ -116,19 +116,23 @@ let NERDTreeShowHidden=1
 let mapleader=" "
 
 " Ctrlp options
+"" The Silver Searcher
+if executable('ag')
+    " Use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+    " ag is fast enough that CtrlP doesn't need to cache
+    let g:ctrlp_use_caching = 0
+else
+    let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
+endif
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_files = 0
 let g:ctrlp_clear_cache_on_exit = 0
-"let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.pyc"
-      \ -g ""'
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Set ctrlp quick keys
 nmap <leader>p :CtrlP<CR>
