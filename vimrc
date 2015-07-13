@@ -25,6 +25,7 @@ Plugin 'rstacruz/sparkup'
 Plugin 'tpope/vim-endwise.git'
 Plugin 'Townk/vim-autoclose.git'
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'mattn/emmet-vim.git'
 Plugin 'jelera/vim-javascript-syntax.git'
 call vundle#end()            " required
 filetype plugin indent on    " required
