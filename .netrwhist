@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/amoodie/Dropbox/Development/Projects/Slime'
 let g:netrw_dirhist_2='/Users/amoodie/Dropbox/Development/Code/JavaScript/js-homework'
 let g:netrw_dirhist_3='/Users/amoodie/Dropbox/Development/Projects/Slime'
+let g:netrw_dirhist_4='/Users/amoodie/Dropbox/Development/Projects/maryannemoodie.com'
+let g:netrw_dirhist_5='/Users/amoodie/Workspace/Etsy/Etsyweb'
+let g:netrw_dirhist_6='/Users/amoodie/Dropbox/Development/Projects/Slime'
