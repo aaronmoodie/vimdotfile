@@ -31,6 +31,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'jelera/vim-javascript-syntax.git'
 Plugin 'tpope/vim-rails'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mkitt/tabline.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -113,9 +114,9 @@ set background=dark
 colorscheme solarized
 
 " Tabline colors
-:hi TabLineFill ctermfg=Black ctermbg=Black
-:hi TabLine ctermfg=Black ctermbg=Black
-:hi TabLineSel ctermfg=DarkBlue ctermbg=White
+hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
+hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
+hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 
 " Nerdtree settings
 let NERDTreeMinimalUI=1
