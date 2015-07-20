@@ -30,6 +30,7 @@ Plugin 'alvan/vim-closetag'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'jelera/vim-javascript-syntax.git'
 Plugin 'tpope/vim-rails'
+Plugin 'mustache/vim-mustache-handlebars'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
