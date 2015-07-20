@@ -112,6 +112,11 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+" Tabline colors
+:hi TabLineFill ctermfg=Black ctermbg=Black
+:hi TabLine ctermfg=Black ctermbg=Black
+:hi TabLineSel ctermfg=DarkBlue ctermbg=White
+
 " Nerdtree settings
 let NERDTreeMinimalUI=1
 let NERDTreeShowHidden=1
