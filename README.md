@@ -20,7 +20,7 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 ## Requirements
 
 #### Vundle
-I use Vundle to manage all of my Vim plugins. Vundle is great, and you should use it too. Visit the [Vundle Github page](https://github.com/gmarik/Vundle.vim) for installation instructions.
+I use Vundle to manage all of my Vim plugins. Vundle is great, and you should use it too. Visit the Vundle [Github page](https://github.com/gmarik/Vundle.vim) for installation instructions.
 
 #### The Silver Searcher
 I use The Silver Search's `ag` command as a replacement for `grep`. Similar to git, `ag` will ignore files and directories when they are added to a `.agignore` file in your project home directory. Visit the [Github page](https://github.com/ggreer/the_silver_searcher) for installation instructions.
