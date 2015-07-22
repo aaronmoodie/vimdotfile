@@ -23,7 +23,7 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 I use Vundle to manage all of my Vim plugins. Vundle is great, and you should use it too. Visit the [Vundle Github page](https://github.com/gmarik/Vundle.vim) for installation instructions.
 
 #### The Silver Searcher
-The Silver Search is a replacement for Grep, and is lightning fast. You'll need to install The Silver Searcher so that searching in Vim (via the CtrlP plugin) functions correctly. Visit the [Github page](https://github.com/ggreer/the_silver_searcher) for installation instructions.
+I use The Silver Search as a replacement for Grep in CtrlP. Visit the [Github page](https://github.com/ggreer/the_silver_searcher) for installation instructions.
 
 ## Installation
 After you have installed the requirements above, clone this repo to your home directory as a folder named `.vim`
