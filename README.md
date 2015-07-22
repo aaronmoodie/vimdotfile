@@ -23,7 +23,7 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 I use Vundle to manage all of my Vim plugins. Vundle is great, and you should use it too. Visit the [Vundle Github page](https://github.com/gmarik/Vundle.vim) for installation instructions.
 
 #### The Silver Searcher
-I use The Silver Search as a replacement for Grep in CtrlP. Visit the [Github page](https://github.com/ggreer/the_silver_searcher) for installation instructions.
+I use The Silver Search's `ag` command as a replacement for `grep`. Similar to git, `ag` will ignore files and directories when they are added to a `.agignore` file in your project home directory. Visit the [Github page](https://github.com/ggreer/the_silver_searcher) for installation instructions.
 
 ## Installation
 After you have installed the requirements above, clone this repo to your home directory as a folder named `.vim`
