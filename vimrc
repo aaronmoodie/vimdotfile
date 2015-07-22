@@ -28,6 +28,7 @@ Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'alvan/vim-closetag'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rking/ag.vim'
 Plugin 'jelera/vim-javascript-syntax.git'
 Plugin 'tpope/vim-rails'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -104,6 +105,9 @@ set t_Co=256
 " Toggle paste mode with F2
 set pastetoggle=<F2>
 set list listchars=tab:\ \ ,trail:.
+" Make it obvious where 80 characters is
+ set textwidth=80
+ set colorcolumn=+1
 " Use ; instead of : to enter commands, saves a lot of keystrokes in the long run
 nnoremap ; :
 
@@ -126,12 +130,21 @@ let NERDTreeShowHidden=1
 let mapleader=" "
 
 " Ctrlp options
-"" The Silver Searcher
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
+    " Use Ag over Grep
     set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g "'
+
+    " ag is fast enough that CtrlP doesn't need to cache
     let g:ctrlp_use_caching = 0
 endif
+
+" Set up Ag
+let g:agprg="/usr/local/bin/ag --vimgrep"
+let g:ag_working_path_mode="r"
 
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_files = 0
