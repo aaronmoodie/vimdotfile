@@ -27,7 +27,10 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'alvan/vim-closetag'
+Bundle 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'rking/ag.vim'
 Plugin 'jelera/vim-javascript-syntax.git'
 Plugin 'tpope/vim-rails'
@@ -129,6 +132,20 @@ let NERDTreeShowHidden=1
 " Set leader to 'space'
 let mapleader=" "
 
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+" Set up Ag
+let g:agprg="/usr/local/bin/ag --vimgrep"
+let g:ag_working_path_mode="r"
+
 " Ctrlp options
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -136,15 +153,11 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 
     " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g "'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
     " ag is fast enough that CtrlP doesn't need to cache
     let g:ctrlp_use_caching = 0
 endif
-
-" Set up Ag
-let g:agprg="/usr/local/bin/ag --vimgrep"
-let g:ag_working_path_mode="r"
 
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_files = 0
