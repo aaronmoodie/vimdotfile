@@ -14,6 +14,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" list of installed plugins
 Plugin 'tpope/vim-git.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-surround.git'
@@ -36,6 +37,7 @@ Plugin 'jelera/vim-javascript-syntax.git'
 Plugin 'tpope/vim-rails'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mkitt/tabline.vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -109,8 +111,8 @@ set t_Co=256
 set pastetoggle=<F2>
 set list listchars=tab:\ \ ,trail:.
 " Make it obvious where 80 characters is
- set textwidth=80
- set colorcolumn=+1
+set textwidth=80
+set colorcolumn=+1
 " Use ; instead of : to enter commands, saves a lot of keystrokes in the long run
 nnoremap ; :
 
