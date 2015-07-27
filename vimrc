@@ -114,7 +114,7 @@ set pastetoggle=<F2>
 set list listchars=tab:\ \ ,trail:.
 
 " Make it obvious where 80 characters is
-set colorcolumn=80
+set colorcolumn=81
 " wrap text at 80 chars if .md file
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
