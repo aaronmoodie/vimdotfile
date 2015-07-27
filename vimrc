@@ -116,9 +116,6 @@ set list listchars=tab:\ \ ,trail:.
 set textwidth=80
 set colorcolumn=+1
 
-" Wrap mardown files
-au BufRead,BufNewFile *.md setlocal textwidth=80
-
 " Theme settings
 syntax enable
 set background=dark
