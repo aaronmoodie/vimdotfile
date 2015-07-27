@@ -45,6 +45,8 @@ filetype plugin indent on    " required
 "
 " BASE SETTINGS
 "
+" Use ; instead of : to enter commands
+nnoremap ; :
 " Allows you to have multiple buffers open
 set hidden
 " Lines of code will not wrap to the next line
@@ -113,9 +115,9 @@ set list listchars=tab:\ \ ,trail:.
 " Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
-" Use ; instead of : to enter commands, saves a lot of keystrokes in the long run
-nnoremap ; :
 
+" Wrap mardown files
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Theme settings
 syntax enable
