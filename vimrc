@@ -112,9 +112,11 @@ set t_Co=256
 " Toggle paste mode with F2
 set pastetoggle=<F2>
 set list listchars=tab:\ \ ,trail:.
+
 " Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+set colorcolumn=80
+" wrap text at 80 chars if .md file
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Theme settings
 syntax enable
