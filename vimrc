@@ -37,6 +37,8 @@ Plugin 'jelera/vim-javascript-syntax.git'
 Plugin 'tpope/vim-rails'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mkitt/tabline.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Valloric/MatchTagAlways'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -169,6 +171,10 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
 
 " Map tab to emmet
 "imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
