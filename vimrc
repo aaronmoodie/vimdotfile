@@ -70,10 +70,10 @@ set copyindent
 set autoread
 
 set autoindent
-" Indenting a line with >> or << will indent or un-indent by 4
-set shiftwidth=4
-" Pressing tab in insert mode will use 4 spaces
-set softtabstop=4
+" Indenting a line with >> or << will indent or un-indent by 2
+set shiftwidth=2
+" Pressing tab in insert mode will use 2 spaces
+set softtabstop=2
 " Use spaces instead of tabs
 set expandtab
 " Highlight matching braces/tags
