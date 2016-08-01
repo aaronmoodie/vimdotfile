@@ -25,8 +25,9 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'rstacruz/sparkup'
 Plugin 'tpope/vim-endwise.git'
 Plugin 'Raimondi/delimitMate'
-Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'joshdick/onedark.vim'
 Plugin 'mattn/emmet-vim.git'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'alvan/vim-closetag'
 Bundle 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
@@ -107,8 +108,6 @@ set noerrorbells
 set laststatus=2
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\%{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\%l,%c-%v\ %)%P
-" Enable syntax highlighting
-syntax enable
 " Tell vim that your terminal supports 256 colors
 set t_Co=256
 " Toggle paste mode with F2
@@ -121,9 +120,17 @@ set colorcolumn=81
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Theme settings
-syntax enable
-set background=dark
-colorscheme solarized
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+syntax on
+colorscheme onedark
 
 " Tabline colors
 hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
