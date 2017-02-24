@@ -1,6 +1,7 @@
 " Vim graphical configuration.
 
-set guifont=InputMono\ Light:h12      " Font family and font size.
+set guifont=InputMono:h12      " Font family and font size.
+set linespace=3
 set antialias                          " MacVim: smooth fonts.
 set encoding=utf-8                     " Use UTF-8 everywhere.
 set guioptions-=T                      " Hide toolbar.

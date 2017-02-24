@@ -20,16 +20,19 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-surround.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'rstacruz/sparkup'
 Plugin 'tpope/vim-endwise.git'
 Plugin 'Raimondi/delimitMate'
-Plugin 'joshdick/onedark.vim'
+Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'alvan/vim-closetag'
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -37,9 +40,11 @@ Plugin 'rking/ag.vim'
 Plugin 'jelera/vim-javascript-syntax.git'
 Plugin 'tpope/vim-rails'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'slim-template/vim-slim.git'
 Plugin 'mkitt/tabline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/MatchTagAlways'
+Plugin 'travisjeffery/vim-gotosymbol'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -120,17 +125,14 @@ set colorcolumn=81
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Theme settings
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
+syntax enable
+set background=dark
+colorscheme solarized
 
-syntax on
-colorscheme onedark
+" Set theme and prefs for airline
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts=1
+set linespace=0
 
 " Tabline colors
 hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
@@ -204,6 +206,8 @@ nmap <leader>tf :tabfirst<cr>
 nmap <leader>tl :tablast<cr>
 nmap <leader>tm :tabmove
 
+" Set goto symbol shortcut
+nmap <leader>t :GotoSymbol
 
 "smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
