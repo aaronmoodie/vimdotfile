@@ -16,37 +16,39 @@ Plugin 'gmarik/Vundle.vim'
 
 " list of installed plugins
 Plugin 'tpope/vim-git.git'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-surround.git'
+Plugin 'Raimondi/delimitMate'
+Plugin 'alvan/vim-closetag'
+Plugin 'Valloric/MatchTagAlways'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'rstacruz/sparkup'
 Plugin 'tpope/vim-endwise.git'
-Plugin 'Raimondi/delimitMate'
-Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'joshdick/onedark.vim'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'alvan/vim-closetag'
-Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'rking/ag.vim'
-Plugin 'jelera/vim-javascript-syntax.git'
 Plugin 'tpope/vim-rails'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'slim-template/vim-slim.git'
+Plugin 'jelera/vim-javascript-syntax.git'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'ternjs/tern_for_vim.git'
+Plugin 'Shutnik/jshint2.vim'
 Plugin 'mkitt/tabline.vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Valloric/MatchTagAlways'
-Plugin 'travisjeffery/vim-gotosymbol'
 
 call vundle#end()            " required
+syntax enable
 filetype plugin indent on    " required
 
 
@@ -118,21 +120,31 @@ set t_Co=256
 " Toggle paste mode with F2
 set pastetoggle=<F2>
 set list listchars=tab:\ \ ,trail:.
+" Hide grep/ag buffer output
+set shellpipe=>
 
 " Make it obvious where 80 characters is
 set colorcolumn=81
 " wrap text at 80 chars if .md file
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 " Theme settings
-syntax enable
 set background=dark
-colorscheme solarized
+colorscheme onedark
 
 " Set theme and prefs for airline
-let g:airline_theme='solarized'
-let g:airline_powerline_fonts=1
-set linespace=0
+let g:airline_theme='onedark'
+let g:airline_powerline_fonts=0
+set linespace=1
 
 " Tabline colors
 hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
@@ -157,7 +169,7 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " Set up Ag
-let g:agprg="/usr/local/bin/ag --vimgrep"
+let g:ag_prg="/usr/local/bin/ag --vimgrep"
 let g:ag_working_path_mode="r"
 
 " Ctrlp options
