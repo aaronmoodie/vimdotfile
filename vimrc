@@ -30,7 +30,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'rstacruz/sparkup'
 Plugin 'tpope/vim-endwise.git'
-Plugin 'joshdick/onedark.vim'
+Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'Valloric/YouCompleteMe'
@@ -46,6 +46,7 @@ Plugin 'ternjs/tern_for_vim.git'
 Plugin 'Shutnik/jshint2.vim'
 Plugin 'mkitt/tabline.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()            " required
 syntax enable
@@ -128,21 +129,12 @@ set colorcolumn=81
 " wrap text at 80 chars if .md file
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
-
 " Theme settings
 set background=dark
-colorscheme onedark
+colorscheme solarized
 
 " Set theme and prefs for airline
-let g:airline_theme='onedark'
+let g:airline_theme='solarized'
 let g:airline_powerline_fonts=0
 set linespace=1
 
