@@ -77,6 +77,7 @@ set autoindent
 set copyindent
 " Update file on change
 set autoread
+au CursorHold * checktime
 
 set autoindent
 " Indenting a line with >> or << will indent or un-indent by 2
