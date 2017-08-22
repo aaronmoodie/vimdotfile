@@ -38,6 +38,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-rails'
+Plugin 'elmcast/elm-vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'jelera/vim-javascript-syntax.git'
 Plugin 'kchmck/vim-coffee-script'
@@ -56,8 +57,6 @@ filetype plugin indent on    " required
 "
 " BASE SETTINGS
 "
-" Use ; instead of : to enter commands
-nnoremap ; :
 " Allows you to have multiple buffers open
 set hidden
 " Lines of code will not wrap to the next line
@@ -136,7 +135,7 @@ colorscheme solarized
 
 " Set theme and prefs for airline
 let g:airline_theme='solarized'
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
 set linespace=1
 
 " Tabline colors
@@ -155,6 +154,9 @@ let mapleader=" "
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_semantic_triggers = {
+     \ 'elm' : ['.'],
+     \}
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = '<tab>'
